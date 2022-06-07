@@ -37,9 +37,9 @@ public class VariablesUniversales {
     public final int Puerto1 = 5000; 
     public final int Puerto2 = 6000; 
      public final int Puerto3 = 7000; 
-    public final String direccionIpSucu2 = "127.0.0.1";
+    public final String direccionIpSucu2 = "192.168.43.98";
     
-    public final String direccionIpSucu3 = "127.0.0.1";
+    public final String direccionIpSucu3 = "192.168.43.181";
 
     
     public  boolean waitPostres = false; 

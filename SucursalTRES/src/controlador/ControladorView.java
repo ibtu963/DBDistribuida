@@ -408,8 +408,7 @@ public class ControladorView extends MouseAdapter implements ActionListener, Obs
         if(aux[0].equals("ventas")){
             modeloNegocio.insertarVentas(modeloNegocio.AuxPedidosSocketMsj(aux[2],aux[1]), modeloNegocio.PedidosSocketMsj(aux[3]));     
         }
-        if(aux[0].contains("chat")){
-            System.out.println("PAso en el chat");
+        if(aux[0].contains("chat")){            
             vista.txtApend.append(aux[1]);
         }else{
                               

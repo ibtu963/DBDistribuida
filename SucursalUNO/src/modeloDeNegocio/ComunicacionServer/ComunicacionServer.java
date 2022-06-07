@@ -415,7 +415,7 @@ public class ComunicacionServer extends Conectar {
           System.out.println(es);
       }                    
   } 
-   public void DeletePostres(Postres postre){
+  public void DeletePostres(Postres postre){
       try{
            PreparedStatement pst = cn.prepareStatement("DELETE FROM "
                 + "postre WHERE id='"+postre.id+"'");
@@ -510,14 +510,7 @@ public class ComunicacionServer extends Conectar {
       double tot = 00.0;
        try{ 
            for(AuxPedidos item : auxPedido){
-          System.out.println("AuxPedidos");
-          System.out.println("Contador: "+contador);
-          System.out.println("idItem: "+item.idItem);
-          System.out.println("Tipo: "+item.tipoItem);
-          System.out.println("Canti: "+item.cantidad);
-          System.out.println("Subtotal: "+item.subTotal);
-          System.out.println("");
-              PreparedStatement pst = cn.prepareStatement("INSERT INTO auxpedido(id_aux_pedido,id_item,tipo,cantidad,subtotal) VALUES (?,?,?,?,?)");
+               PreparedStatement pst = cn.prepareStatement("INSERT INTO auxpedido(id_aux_pedido,id_item,tipo,cantidad,subtotal) VALUES (?,?,?,?,?)");
               pst.setString(1, contador);
               pst.setString(2, item.idItem);
               pst.setString(3, item.tipoItem);
@@ -530,15 +523,9 @@ public class ComunicacionServer extends Conectar {
               tot += Double.parseDouble(item.subTotal);
               pst.executeUpdate();    
         }
-           System.out.println("Pedidos");
-      System.out.println("");
+         
       pedido.idAux = contador;
       pedido.total = String.valueOf(tot);
-      System.out.println("PediIDAUx: "+pedido.idAux);
-      System.out.println("total: "+pedido.total);
-      System.out.println("cliente: "+pedido.cliente);
-      System.out.println("fecha: "+pedido.fecha);
-      
       PreparedStatement pst2 = cn.prepareStatement("INSERT INTO pedidos(cliente,fecha,total,id_aux_pedido) VALUES (?,?,?,?)");
              pst2.setString(1, pedido.cliente);
               pst2.setString(2, pedido.fecha);
@@ -592,7 +579,6 @@ public class ComunicacionServer extends Conectar {
             System.out.println(valorVar[1]);
             String datoAux = valorVar[1].substring(1,valorVar[1].length()-1);
             switch(j){
-             
                 case 0:
                      aux.idItem = datoAux;
                     break;
